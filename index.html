@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="https://feeds.dailybrain.fr">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DailyBrain - Innovation Agency">
+    <meta property="og:url" content="https://feeds.dailybrain.fr">
+    <meta property="og:site_name" content="DailyBrain">
+    <meta property="og:description" content="DailyBrain's curated list of IT / Technologies related articles &amp; videos." />
+
+    <meta property="og:image" content="https://www.dailybrain.fr/logos/dailybrain.png" />
+    <meta property="og:image:url" content="https://www.dailybrain.fr/logos/dailybrain.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="DailyBrain - Innovation Agency" />
+    <meta name="twitter:site" content="@DailyBrainFR" />
+    <meta name="twitter:creator" content="@DailyBrainFR" />
+
+    <meta name="description" content="DailyBrain's curated list of IT / Technologies related articles &amp; videos.">
+    <meta name="author" content="DailyBrain">
+
+    <script type='application/ld+json'>{"@context":"http://schema.org","@type":"WebSite","@id":"#website","url":"https://www.dailybrain.fr/","name":"DailyBrain","potentialAction":{"@type":"SearchAction","target":"https://www.dailybrain.fr\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script type='application/ld+json'>{"@context":"http://schema.org","@type":"Organization","url":"https://www.dailybrain.fr/","sameAs":["https://www.facebook.com/dailybrain","https://www.instagram.com/dailybrainfr","https://www.linkedin.com/company/dailybrain","https://twitter.com/DailyBrainFR"],"@id":"#organization","name":"DailyBrain","logo":"https://dailybrain.fr/logos/dailybrain.png"}</script>
+
+    <meta name="google-site-verification" content="qk-AffI6VQ7yD4Vu_5ADhm5OhsNMEI6ci4qnShQvoSY" />
+
+    <title>DailyBrain's curated list of IT / Technologies related articles &amp; videos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
+
+    <style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
+    .ui.menu .item img.logo {
+      margin-right: 1.5em;
+    }
+    .main.container {
+      margin-top: 7em;
+    }
+    .wireframe {
+      margin-top: 2em;
+    }
+    .ui.footer.segment {
+      margin: 5em 0em 0em;
+      padding: 5em 0em;
+    }
+    div.brand {
+      font-weight: 500;
+      font-size: 15px;
+      text-transform: none;
+      font-family: 'Pacifico';
+    }
+    .videowrapper {
+        float: none;
+        clear: both;
+        width: 100%;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+    }
+    .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Your Semantic UI Code -->
+    <div class="ui fixed inverted menu">
+      <div class="ui container">
+        <a href="" class="header item">
+          DailyBrain's curated list
+        </a>
+        <a href="https://dailybrain.fr" class="header item">
+          Back to company page
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards will be append there... -->
+    <div class="ui main three stackable cards container"></div>
+
+    <!-- Global Modal -->
+    <div class="ui basic modal">
+      <div class="header actions">
+        <div class="ui red basic cancel inverted button">
+          <i class="remove icon"></i>
+          Close
+        </div>
+      </div>
+      <div class="content">
+        <div class="videowrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+
+      var google_id = '1_QgpqodthbGsQlkOjzUltJkTdUv18V5bMksqsVvdZZ4';
+      var sheet_json = 'https://spreadsheets.google.com/feeds/list/' + google_id + '/1/public/values?alt=json';
+
+      var now = moment(new Date());
+
+      $.getJSON(sheet_json, function(data) {
+          console.log(data.feed.entry);
+
+          $.makeArray(data.feed.entry)
+          .map((e, i) =>
+            `
+            <div class="card">
+              <div class="blurring dimmable image">
+                ${e.gsx$favorite.$t == '1' ?
+                  `
+                  <a class="ui red right corner label">
+                    <i class="heart icon"></i>
+                  </a>
+                  ` : ''}
+
+                <div class="ui inverted dimmer">
+                  <div class="content">
+                    <div class="center">
+                      <div class="ui primary right labeled icon button"
+                           data-url="${e.gsx$url.$t}"
+                           data-id="${e.gsx$videoid.$t}"
+                           data-placeholder="${e.gsx$imagesrc.$t}">
+                           ${e.gsx$videoid.$t !== '' ? 'Watch now !' : 'Read more'}
+                           <i class="right ${e.gsx$videoid.$t !== '' ? 'play' : 'linkify'} icon"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img src="${e.gsx$imagesrc.$t}">
+              </div>
+              <div class="content">
+                <a href="${e.gsx$url.$t}" target="_blank" class="header">${e.gsx$title.$t}</a>
+                <div class="meta">
+                  <span class="date">${moment.duration(now.diff(moment(e.gsx$timeadded.$t))).humanize()}</span>
+                </div>
+                <div class="description">
+                  ${e.gsx$excerpt.$t}
+                </div>
+              </div>
+              <div class="extra content">
+                <div class="left floated like">
+                  ${e.gsx$tags.$t.split(',').map(t => '<span class="ui label">'+t+'</span>').join(' ')}
+                </div>
+              </div>
+              <div class="extra content">
+                <span class="left floated like">
+                  ${(e.gsx$source.$t == 'youtube.com') ? '<i class="youtube play icon"></i>' : ''}
+                  ${(e.gsx$source.$t == 'medium.com') ? '<i class="medium icon"></i>' : ''}
+                  ${e.gsx$source.$t}
+                </span>
+              </div>
+            </div>
+            `
+          )
+          .map( e => $('.cards').append(e) );
+
+          $('.cards .image').dimmer({ on: 'hover' });
+
+          $('.dimmer .button').each(function(i) {
+            $(this).on("click", function(){
+
+              var id = $(this).data('id');
+              var isvideo = (id !== undefined && id !== '');
+              var placeholder = $(this).data('placeholder');
+              var src = 'https://www.youtube.com/embed/' + id;
+
+              //console.log(id);
+              //console.log(isvideo);
+              if(!isvideo) {
+                var url = $(this).data('url');
+                window.open(url);
+              } else {
+
+                $('.modal').modal({
+                  onHide: function(){
+                      // reset to force stop
+                      $('.modal iframe').attr('src', src);
+                      console.log('hide');
+                  },
+                  onShow: function(){
+                      $('.modal iframe').attr('src', src);
+                  }
+                });
+
+                $('.modal').modal('show');
+
+              }
+
+            });
+
+          });
+
+
+      });
+
+    </script>
+
+  </body>
+</html>
