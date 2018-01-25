@@ -179,6 +179,8 @@
                 <span class="left floated like">
                   ${(e.gsx$source.$t == 'youtube.com') ? '<i class="youtube play icon"></i>' : ''}
                   ${(e.gsx$source.$t == 'medium.com') ? '<i class="medium icon"></i>' : ''}
+                  ${(e.gsx$source.$t == 'github.com') ? '<i class="github icon"></i>' : ''}
+                  ${!['youtube.com', 'medium.com', 'github.com'].includes(e.gsx$source.$t) ? '<i class="linkify icon"></i>' : ''}
                   ${e.gsx$source.$t}
                 </span>
               </div>
