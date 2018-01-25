@@ -139,13 +139,19 @@
             `
             <div class="card">
               <div class="blurring dimmable image">
+                ${e.gsx$videoid.$t != '' ?
+                  `
+                  <a class="ui left corner label">
+                    <i class="record icon"></i>
+                  </a>
+                  ` : ''
+                }
                 ${e.gsx$favorite.$t == '1' ?
                   `
                   <a class="ui red right corner label">
                     <i class="heart icon"></i>
                   </a>
                   ` : ''}
-
                 <div class="ui inverted dimmer">
                   <div class="content">
                     <div class="center">
