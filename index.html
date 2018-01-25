@@ -34,6 +34,7 @@
 
     <title>DailyBrain's curated list of IT / Technologies related articles &amp; videos</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
@@ -56,12 +57,20 @@
       margin: 5em 0em 0em;
       padding: 5em 0em;
     }
-    div.brand {
-      font-weight: 500;
-      font-size: 15px;
-      text-transform: none;
-      font-family: 'Pacifico';
+
+    .navbar-brand {
+        color: white;
+        font-weight: 500;
+        font-size: 25px;
+        text-transform: none;
+        font-family: 'Pacifico', cursive;
+        padding: 15px 20px;
     }
+
+    .navbar-brand:hover {
+        color: white;
+    }
+
     .videowrapper {
         float: none;
         clear: both;
@@ -86,11 +95,8 @@
     <!-- Your Semantic UI Code -->
     <div class="ui fixed inverted menu">
       <div class="ui container">
-        <a href="" class="header item">
-          DailyBrain's curated list
-        </a>
-        <a href="https://dailybrain.fr" class="header item">
-          Back to company page
+        <a class="navbar-brand" href="https://dailybrain.fr">
+          DailyBrain
         </a>
       </div>
     </div>
