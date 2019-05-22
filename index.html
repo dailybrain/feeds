@@ -248,7 +248,24 @@
     </script>
 
     <!-- Crisp -->
-    <script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="5c0680ac-18d2-45f8-9947-d8506930edee";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <!--<script type="text/javascript">$crisp=[];CRISP_WEBSITE_ID="5c0680ac-18d2-45f8-9947-d8506930edee";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.im/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>-->
+    
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="1692766427670141"
+      theme_color="#0084ff">
+    </div>
 
   </body>
 </html>
